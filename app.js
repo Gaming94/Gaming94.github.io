@@ -13,7 +13,7 @@
     const card=create('article','featured-card');
     const visual=create('div',`featured-visual featured-${project.visual}`);
     const small=create('span','visual-kicker',project.category); visual.append(small);
-    const emblem=create('div','featured-emblem'); emblem.textContent=project.visual==='family'?'F / G':project.visual==='hibicus'?'H / C':'D / B'; visual.append(emblem);
+    if(project.image){const img=create('img','featured-photo');img.src=project.image;img.alt='';img.loading='lazy';img.onerror=()=>img.remove();visual.append(img);}else{const emblem=create('div','featured-emblem'); emblem.textContent=project.visual==='family'?'F / G':project.visual==='hibicus'?'H / C':'D / B'; visual.append(emblem);}
     visual.append(create('div','visual-grid'));
     const index=create('span','featured-no',project.no);visual.append(index);
     const main=create('div','featured-content');main.append(create('p','featured-subtitle',project.subtitle));main.append(create('h3','',project.title));main.append(create('p','featured-description',project.description));
