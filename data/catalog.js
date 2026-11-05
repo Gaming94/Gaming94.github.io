@@ -7,7 +7,7 @@ window.ARCHIVE_DATA = {
   featured: [
     { no: '01', category: 'WEB GAME / SYSTEM DESIGN', title: '가문 생존 시뮬레이션', subtitle: '세대를 잇는 선택과 결과', description: '가문원 성장, 직업, 결혼과 승계, 라이벌과 이벤트를 결합한 웹 기반 운영 시뮬레이션을 개발 중입니다.', tags: ['WEB GAME','JAVASCRIPT','IN PROGRESS'], visual: 'family', link: '', linkText: '프로젝트 상세 준비 중' },
     { no: '02', category: 'INTERACTIVE NARRATIVE', title: '하이비커스 연대기', subtitle: '하나의 세계, 수많은 이야기', description: '세계관과 인물 관계를 중심으로 구성된 대형 AI 채팅 시뮬레이션. 별도의 설정 아카이브를 함께 구축합니다.', tags: ['WORLD BUILDING','AI CHATBOT'], visual: 'hibicus', link: './worlds/hibicus/', linkText: '설정집 미리보기' },
-    { no: '03', category: 'AUTOMATION / TOOL', title: 'Discord 관리 봇', subtitle: '반복되는 작업을 시스템으로', description: '일일·주간 숙제와 다중 캐릭터 정보를 관리하는 디스코드 봇 개발 경험을 소개합니다.', tags: ['DISCORD','AUTOMATION','BOT'], visual: 'discord', link: '', linkText: '프로젝트 상세 준비 중' }
+    { no: '03', category: 'DISCORD BOT / AUTOMATION', title: '숙제도우미_컴건봇', subtitle: '다중 캐릭터의 주간 숙제를 간편하게', description: 'Discord에서 캐릭터별 숙제를 체크하고 계정 공통 항목을 연동하는 Python 기반 자동화 봇. 운영 기록과 개발 구조를 소개합니다.', tags: ['PYTHON','DISCORD.PY','DISCLOUD'], visual: 'discord', image: './assets/projects/discord-bot/Comganbot_profile2.webp', link: './projects/discord-bot/', linkText: '프로젝트 자세히 보기' }
   ],
   chatbots: [
     { id:'hibicus', title:'하이비커스 연대기', type:'world', tagline:'대형 세계관 기반 AI 시뮬레이션', description:'인물·세력·사건의 상호작용을 중심으로 전개되는 대형 세계관 작품입니다.', tags:['판타지','세계관','시뮬레이션'], emblem:'H', tone:'rose', image:'', stat:'3.8만 채팅', startSituation:'[원본 채팅봇의 시작 상황을 이곳에 등록해 주세요.]', chatUrl:'', worldUrl:'./worlds/hibicus/' },
