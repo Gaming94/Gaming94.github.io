@@ -1,166 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>PNG to WebP 변환기 | KAOR NOTE</title>
-  <style>
-    :root {
-      --bg: #121212;
-      --card-bg: #1e1e1e;
-      --accent: #e0e0e0;
-      --border: #333333;
-      --text: #ffffff;
-      --text-sub: #888888;
-    }
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      display: flex;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-    .converter-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 30px;
-      max-width: 600px;
-      width: 100%;
-    }
-    .drop-zone {
-      border: 2px dashed var(--border);
-      border-radius: 8px;
-      padding: 40px;
-      text-align: center;
-      cursor: pointer;
-      transition: border-color 0.2s;
-    }
-    .drop-zone.dragover {
-      border-color: #ffffff;
-      background: rgba(255, 255, 255, 0.05);
-    }
-    .controls {
-      margin: 20px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: var(--text-sub);
-      font-size: 0.9rem;
-    }
-    .file-list {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .file-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 14px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 0.85rem;
-    }
-    .download-btn {
-      color: #fff;
-      text-decoration: none;
-      background: #333;
-      padding: 6px 12px;
-      border-radius: 4px;
-      font-size: 0.8rem;
-    }
-    .download-btn:hover { background: #555; }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f5">
+  <meta name="description" content="PNG, JPG, WebP 이미지를 브라우저에서 간편하게 변환하세요. 품질 조절, 크기 축소, 일괄 ZIP 다운로드까지. 서버 업로드 없는 KAOR IMAGE STUDIO.">
+  <title>KAOR IMAGE STUDIO — 무료 이미지 변환기</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#converter">변환기로 바로가기</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="./" aria-label="KAOR IMAGE STUDIO 처음으로">
+        <span class="brand-icon" aria-hidden="true">K<span>.</span></span>
+        <span class="brand-text"><strong>KAOR <span>IMAGE STUDIO</span></strong><small>TOOLS FOR EVERYDAY CREATORS</small></span>
+      </a>
+      <nav aria-label="주 메뉴" class="top-nav">
+        <a href="#converter">이미지 변환</a>
+        <a href="#how-it-works">이용 방법</a>
+        <a class="home-link" href="../../">KAOR NOTE <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
 
-<div class="converter-card">
-  <h2>PNG → WebP 변환</h2>
-  <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 20px;">
-    서버로 업로드되지 않고 내 브라우저에서 안전하게 무제한 변환됩니다.
-  </p>
+  <main>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-flower" aria-hidden="true">✳</span> SIMPLE TOOLS, BETTER WORKFLOW</p>
+        <h1 id="hero-title">이미지는 가볍게.<br><em>작업은 더 간편하게.</em></h1>
+        <p class="hero-desc">PNG, JPG, WebP부터 지원되는 브라우저의 AVIF까지.<br>이미지를 올리고, 원하는 형태로 바꾸고, 바로 저장하세요.</p>
+        <div class="hero-chips" aria-label="주요 특징">
+          <span>✦ 무료 변환</span><span>✦ 여러 장 한 번에</span><span>✦ 서버 업로드 없음</span>
+        </div>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <div class="hero-illustration-label">A LITTLE LIGHTER, A LOT EASIER</div>
+        <div class="floating-file file-before"><span class="file-icon">▧</span><strong>photo.png</strong><small>ORIGINAL IMAGE</small></div>
+        <div class="illustration-arrow">↘</div>
+        <div class="floating-file file-after"><span class="file-icon">✳</span><strong>photo.webp</strong><small>READY TO USE</small></div>
+        <div class="illustration-caption"><span class="caption-dot"></span> 100% IN YOUR BROWSER</div>
+      </div>
+    </section>
 
-  <div class="controls">
-    <label for="quality">압축 품질 (Quality): <span id="quality-val">85%</span></label>
-    <input type="range" id="quality" min="10" max="100" value="85">
-  </div>
+    <section id="converter" class="workspace shell" aria-labelledby="converter-title">
+      <div class="section-title-row">
+        <div><p class="eyebrow">01 / THE CONVERTER</p><h2 id="converter-title">이미지 변환하기 <span aria-hidden="true">✳</span></h2></div>
+        <span class="section-side-note">파일은 기기 밖으로 전송되지 않아요.</span>
+      </div>
+      <div class="workspace-layout">
+        <div class="input-column">
+          <section class="panel upload-panel" aria-labelledby="upload-heading">
+            <div class="panel-heading"><span class="step-number">01</span><h3 id="upload-heading">이미지 추가</h3></div>
+            <label for="file-input" class="drop-zone" id="drop-zone">
+              <input id="file-input" class="visually-hidden" type="file" accept="image/png,image/jpeg,image/webp,image/avif" multiple aria-describedby="drop-hint">
+              <span class="upload-icon" aria-hidden="true">
+                <svg width="31" height="31" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V3m0 0L7 8m5-5 5 5"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg>
+              </span>
+              <strong>이미지를 여기에 놓으세요</strong>
+              <span class="drop-sub">또는 아래 버튼으로 파일 선택</span>
+              <span class="choose-btn">파일 선택하기 <span aria-hidden="true">↗</span></span>
+              <small id="drop-hint">PNG · JPG · WebP · AVIF 입력 지원 (최대 100개)</small>
+            </label>
+          </section>
+          <section class="panel settings-panel" aria-labelledby="settings-heading">
+            <div class="panel-heading"><span class="step-number">02</span><h3 id="settings-heading">변환 설정</h3></div>
+            <fieldset class="format-fieldset" id="format-fieldset">
+              <legend>출력 형식</legend>
+              <div class="format-grid">
+                <label class="format-option"><input type="radio" name="output-format" value="image/webp" checked><span>WebP</span></label>
+                <label class="format-option"><input type="radio" name="output-format" value="image/jpeg"><span>JPG</span></label>
+                <label class="format-option"><input type="radio" name="output-format" value="image/png"><span>PNG</span></label>
+                <label class="format-option"><input type="radio" name="output-format" value="image/avif" id="avif-option" disabled><span>AVIF <small id="avif-badge">확인 중</small></span></label>
+              </div>
+            </fieldset>
+            <div class="setting-field" id="quality-field">
+              <div class="setting-label"><label for="quality">이미지 품질</label><output id="quality-value" for="quality">85%</output></div>
+              <input type="range" id="quality" min="10" max="100" value="85" step="5">
+              <div class="range-labels"><span>작은 파일</span><span>높은 화질</span></div>
+            </div>
+            <div class="setting-field resize-field">
+              <div class="setting-label"><label for="resize">이미지 크기</label></div>
+              <select id="resize">
+                <option value="1">원본 크기 유지 (100%)</option>
+                <option value="0.75">75%로 축소</option>
+                <option value="0.5">50%로 축소</option>
+                <option value="0.25">25%로 축소</option>
+              </select>
+              <p class="setting-help" id="setting-help">WebP는 크기와 화질의 균형이 좋은 형식이에요.</p>
+            </div>
+            <button class="primary-btn" id="convert-btn" type="button" disabled>이미지를 먼저 추가해 주세요</button>
+          </section>
+        </div>
+        <section class="panel results-panel" aria-labelledby="results-heading">
+          <div class="results-header">
+            <div><span class="step-number">03</span><h3 id="results-heading">변환 결과</h3><span class="item-count" id="item-count">0개 파일</span></div>
+            <button type="button" class="text-button" id="clear-btn" disabled>전체 지우기</button>
+          </div>
+          <div class="empty-results" id="empty-results">
+            <div class="empty-art" aria-hidden="true"><span class="empty-paper one">PNG</span><span class="empty-paper two">WEBP</span><span class="empty-spark">✳</span></div>
+            <strong>아직 선택한 이미지가 없어요</strong>
+            <p>왼쪽에서 파일을 추가하면<br>이곳에 변환 결과가 나타납니다.</p>
+          </div>
+          <div class="file-list" id="file-list" role="list" aria-label="선택한 파일 목록"></div>
+          <div class="results-footer" id="results-footer" hidden>
+            <p class="results-summary" id="results-summary">변환된 파일이 여기에 표시됩니다.</p>
+            <button type="button" class="zip-btn" id="zip-btn" disabled><span aria-hidden="true">↓</span> 변환 파일 ZIP으로 받기</button>
+          </div>
+          <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+        </section>
+      </div>
+    </section>
 
-  <div class="drop-zone" id="drop-zone">
-    PNG 파일들을 여기에 드래그하거나 클릭하여 선택하세요
-    <input type="file" id="file-input" accept="image/png" multiple style="display: none;">
-  </div>
-
-  <div class="file-list" id="file-list"></div>
-</div>
-
-<script>
-  const dropZone = document.getElementById('drop-zone');
-  const fileInput = document.getElementById('file-input');
-  const fileList = document.getElementById('file-list');
-  const qualitySlider = document.getElementById('quality');
-  const qualityVal = document.getElementById('quality-val');
-
-  qualitySlider.addEventListener('input', (e) => {
-    qualityVal.textContent = `${e.target.value}%`;
-  });
-
-  dropZone.addEventListener('click', () => fileInput.click());
-
-  dropZone.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    dropZone.classList.add('dragover');
-  });
-
-  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
-
-  dropZone.addEventListener('drop', (e) => {
-    e.preventDefault();
-    dropZone.classList.remove('dragover');
-    processFiles(e.dataTransfer.files);
-  });
-
-  fileInput.addEventListener('change', (e) => processFiles(e.target.files));
-
-  function processFiles(files) {
-    const quality = parseFloat(qualitySlider.value) / 100;
-
-    Array.from(files).forEach(file => {
-      if (!file.type.match('image/png')) return;
-
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const img = new Image();
-        img.onload = () => {
-          const canvas = document.createElement('canvas');
-          canvas.width = img.width;
-          canvas.height = img.height;
-          const ctx = canvas.getContext('2d');
-          ctx.drawImage(img, 0, 0);
-
-          canvas.toBlob((blob) => {
-            const outputName = file.name.replace(/\.png$/i, '') + '.webp';
-            const originalSize = (file.size / 1024).toFixed(1);
-            const newSize = (blob.size / 1024).toFixed(1);
-            const downloadUrl = URL.createObjectURL(blob);
-
-            const item = document.createElement('div');
-            item.className = 'file-item';
-            item.innerHTML = `
-              <span>${outputName} <small style="color: var(--text-sub);">(${originalSize}KB → ${newSize}KB)</small></span>
-              <a href="${downloadUrl}" download="${outputName}" class="download-btn">다운로드</a>
-            `;
-            fileList.appendChild(item);
-          }, 'image/webp', quality);
-        };
-        img.src = event.target.result;
-      };
-      reader.readAsDataURL(file);
-    });
-  }
-</script>
-
+    <section class="guide-section" id="how-it-works" aria-labelledby="guide-title">
+      <div class="shell">
+        <p class="eyebrow">02 / HOW IT WORKS</p>
+        <h2 id="guide-title">단 세 단계면 충분해요.</h2>
+        <div class="guide-grid">
+          <article class="guide-card"><span class="guide-index">01</span><div class="guide-icon" aria-hidden="true">▧</div><h3>파일 올리기</h3><p>이미지를 드래그하거나 여러 파일을 한 번에 선택하세요.</p></article>
+          <article class="guide-card"><span class="guide-index">02</span><div class="guide-icon" aria-hidden="true">◈</div><h3>옵션 선택하기</h3><p>파일 형식, 화질, 이미지 크기를 원하는 대로 정하세요.</p></article>
+          <article class="guide-card"><span class="guide-index">03</span><div class="guide-icon" aria-hidden="true">↧</div><h3>저장하기</h3><p>변환된 이미지를 각각 받거나 ZIP으로 한 번에 저장하세요.</p></article>
+        </div>
+        <aside class="privacy-note"><div class="privacy-icon" aria-hidden="true">♧</div><div><strong>이미지는 내 기기에만 머물러요.</strong><p>별도 서버, 회원가입, 업로드 과정 없이 브라우저에서 직접 처리합니다. JPG는 투명한 배경이 흰색으로 저장되며, 움직이는 이미지는 첫 프레임만 처리될 수 있습니다.</p></div></aside>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><span>KAOR IMAGE STUDIO <span class="footer-dot">✳</span></span><small>© KAOR NOTE · BUILT FOR THE WEB</small><a href="../../">KAOR NOTE로 돌아가기 ↗</a></div></footer>
 </body>
 </html>
