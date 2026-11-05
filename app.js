@@ -62,8 +62,15 @@
     const tagBox=$('#dialog-tags');tagBox.replaceChildren(...bot.tags.map(t=>create('span','tag',t)));
     const scene=$('#dialog-scene');scene.textContent=bot.startSituation;scene.classList.toggle('is-placeholder',bot.startSituation.includes('[원본'));
     const banner=$('#dialog-banner');banner.className=`dialog-banner tone-${bot.tone}`;
-    banner.querySelector('img')?.remove();
-    if(bot.image){const img=create('img','dialog-image');img.src=bot.image;img.alt='';img.onerror=()=>img.remove();banner.prepend(img);}
+    banner.querySelectorAll('img').forEach(img=>img.remove());
+    if(bot.image){
+      const backdrop=create('img','dialog-image-backdrop');
+      backdrop.src=bot.image;backdrop.alt='';backdrop.setAttribute('aria-hidden','true');
+      backdrop.onerror=()=>backdrop.remove();
+      const img=create('img','dialog-image');
+      img.src=bot.image;img.alt='';img.onerror=()=>{img.remove();backdrop.remove();};
+      banner.prepend(backdrop,img);
+    }
     $('#dialog-emblem').textContent=bot.emblem;
     const chat=$('#dialog-chat-link');if(bot.chatUrl){chat.href=bot.chatUrl;chat.removeAttribute('aria-disabled');chat.classList.remove('disabled');chat.textContent='베이비챗 작품 보기 ↗';}else{chat.removeAttribute('href');chat.setAttribute('aria-disabled','true');chat.classList.add('disabled');chat.textContent='채팅 링크 등록 예정';}
     const world=$('#dialog-world-link');world.hidden=!(bot.type==='world'&&bot.worldUrl);if(!world.hidden)world.href=bot.worldUrl;
