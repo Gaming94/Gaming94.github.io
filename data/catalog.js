@@ -26,9 +26,24 @@ window.ARCHIVE_DATA = {
       visual: 'hibicus',
       link: './worlds/hibicus/',
       linkText: '설정집 미리보기'
+    }
+  ],
+
+
+  tools: [
+    {
+      no: '01',
+      category: 'WEB UTILITY / IMAGE CONVERTER',
+      title: 'KAOR IMAGE STUDIO',
+      subtitle: '이미지를 더 가볍고 자유롭게',
+      description: '브라우저에서 PNG·JPG·WebP 이미지를 변환하고 화질과 크기를 조정하는 웹 도구입니다. 다중 파일 처리와 ZIP 다운로드를 지원합니다.',
+      tags: ['JAVASCRIPT', 'CANVAS API', 'WEB TOOL'],
+      visual: 'image',
+      link: './tools/PngToWebp/',
+      linkText: '이미지 변환기 사용하기'
     },
     {
-      no: '03',
+      no: '02',
       category: 'DISCORD BOT / AUTOMATION',
       title: '숙제도우미_컴건봇',
       subtitle: '다중 캐릭터의 주간 숙제를 간편하게',
@@ -40,6 +55,7 @@ window.ARCHIVE_DATA = {
       linkText: '프로젝트 자세히 보기'
     }
   ],
+
 
 
 
