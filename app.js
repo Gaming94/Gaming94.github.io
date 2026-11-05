@@ -59,7 +59,7 @@
     banner.querySelector('img')?.remove();
     if(bot.image){const img=create('img','dialog-image');img.src=bot.image;img.alt='';img.onerror=()=>img.remove();banner.prepend(img);}
     $('#dialog-emblem').textContent=bot.emblem;
-    const chat=$('#dialog-chat-link');if(bot.chatUrl){chat.href=bot.chatUrl;chat.removeAttribute('aria-disabled');chat.classList.remove('disabled');chat.textContent='채팅 시작하기 ↗';}else{chat.removeAttribute('href');chat.setAttribute('aria-disabled','true');chat.classList.add('disabled');chat.textContent='채팅 링크 등록 예정';}
+    const chat=$('#dialog-chat-link');if(bot.chatUrl){chat.href=bot.chatUrl;chat.removeAttribute('aria-disabled');chat.classList.remove('disabled');chat.textContent='베이비챗 작품 보기 ↗';}else{chat.removeAttribute('href');chat.setAttribute('aria-disabled','true');chat.classList.add('disabled');chat.textContent='채팅 링크 등록 예정';}
     const world=$('#dialog-world-link');world.hidden=!(bot.type==='world'&&bot.worldUrl);if(!world.hidden)world.href=bot.worldUrl;
     $('#dialog-footnote').textContent=bot.chatUrl?'외부 채팅 플랫폼으로 이동합니다.':'이 작품의 외부 채팅 URL은 아직 등록되지 않았습니다.';
     dialog.showModal();
