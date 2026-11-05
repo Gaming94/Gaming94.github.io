@@ -8,6 +8,12 @@
   const chatbotTarget = $('#chatbot-grid');
   let currentFilter = 'all';
   let lastFocus = null;
+  const categoryMeta = {
+    world: {ko:'대형 세계관', en:'WORLD ARCHIVE', detail:'LARGE WORLD / WORLD ARCHIVE'},
+    simulation: {ko:'시뮬레이션', en:'SIMULATION', detail:'INTERACTIVE SIMULATION'},
+    single: {ko:'1:1 대화형', en:'CHARACTER CHAT', detail:'PERSONAL STORY / CHARACTER CHAT'},
+    pending: {ko:'분류 보류', en:'UNCLASSIFIED', detail:'ARCHIVE / CATEGORY PENDING'}
+  };
 
   for(const project of data.featured){
     const card=create('article','featured-card');
@@ -28,8 +34,8 @@
     const art=create('div',`chatbot-art tone-${bot.tone}`);
     if(bot.image){const img=create('img');img.src=bot.image;img.alt='';img.loading='lazy';img.onerror=()=>img.remove();art.append(img);}
     art.append(create('span','bot-emblem',bot.emblem));
-    art.append(create('span','bot-genre',bot.type==='world'?'WORLD ARCHIVE':'CHARACTER CHAT'));
-    const content=create('div','chatbot-content');const top=create('div','chatbot-topline');top.append(create('span','bot-type',bot.type==='world'?'세계관형':'대화형'));if(bot.stat)top.append(create('span','bot-stat',bot.stat));content.append(top);
+    art.append(create('span','bot-genre',categoryMeta[bot.type]?.en || 'CHATBOT'));
+    const content=create('div','chatbot-content');const top=create('div','chatbot-topline');top.append(create('span','bot-type',categoryMeta[bot.type]?.ko || '채팅봇'));if(bot.stat)top.append(create('span','bot-stat',bot.stat));content.append(top);
     content.append(create('h3','',bot.title));content.append(create('p','',bot.tagline));
     const bottom=create('div','bot-bottom');bottom.append(create('span','',bot.type==='world'?'설정 / 시작 상황':'소개 / 시작 상황'));bottom.append(create('span','', '↗'));content.append(bottom);
     button.append(art,content);button.addEventListener('click',()=>openBot(bot,button));return button;
@@ -51,7 +57,7 @@
   const dialog=$('#chatbot-dialog');
   function openBot(bot, opener){if(!dialog)return;lastFocus=opener;
     $('#dialog-record-id').textContent=bot.id.toUpperCase();
-    $('#dialog-type').textContent=bot.type==='world'?'LARGE WORLD / WORLD ARCHIVE':'PERSONAL STORY / CHARACTER CHAT';
+    $('#dialog-type').textContent=categoryMeta[bot.type]?.detail || 'CHATBOT ARCHIVE';
     $('#dialog-title').textContent=bot.title;$('#dialog-description').textContent=bot.description;
     const tagBox=$('#dialog-tags');tagBox.replaceChildren(...bot.tags.map(t=>create('span','tag',t)));
     const scene=$('#dialog-scene');scene.textContent=bot.startSituation;scene.classList.toggle('is-placeholder',bot.startSituation.includes('[원본'));
