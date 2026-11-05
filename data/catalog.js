@@ -39,6 +39,7 @@ window.ARCHIVE_DATA = {
       description: '브라우저에서 PNG·JPG·WebP 이미지를 변환하고 화질과 크기를 조정하는 웹 도구입니다. 다중 파일 처리와 ZIP 다운로드를 지원합니다.',
       tags: ['JAVASCRIPT', 'CANVAS API', 'WEB TOOL'],
       visual: 'image',
+      image: './assets/tools&etc/imagestudio/imagestudio_profile.webp',
       link: './tools/PngToWebp/',
       linkText: '이미지 변환기 사용하기'
     },
@@ -50,16 +51,11 @@ window.ARCHIVE_DATA = {
       description: 'Discord에서 캐릭터별 숙제를 체크하고 계정 공통 항목을 연동하는 Python 기반 자동화 봇. 운영 기록과 개발 구조를 소개합니다.',
       tags: ['PYTHON', 'DISCORD.PY', 'DISCLOUD'],
       visual: 'discord',
-      image: './assets/projects/discord-bot/Comganbot_profile2.webp',
+      image: './assets/tools&etc/discord-bot/Comganbot_profile2.webp',
       link: './projects/discord-bot/',
       linkText: '프로젝트 자세히 보기'
     }
   ],
-
-
-
-
-
 
 
   // world: 대형 세계관 / simulation: 시뮬레이션 / single: 1:1 대화형 / pending: 분류 보류
@@ -101,7 +97,7 @@ window.ARCHIVE_DATA = {
       tags: ['북부', '영지', '생존'],
       tone: 'ice',
       image: 'assets/chatbots/northern-domain-survival/northern-domain-survival.webp',
-      stat: '4.1천 채팅',
+      stat: '4.3천 채팅',
       startSituation: '[원본 채팅봇의 시작 상황을 이곳에 등록해 주세요.]',
       chatUrl: 'https://babechat.ai/character/u/0c4bebe0-724a-47d6-9788-476daacc95a5/profile',
       worldUrl: ''
