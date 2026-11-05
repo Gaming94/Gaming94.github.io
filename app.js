@@ -19,12 +19,18 @@
   function renderProjectCards(items, target){
     for(const project of items){
     const card=create('article','featured-card');
-    const visual=create('div',`featured-visual featured-${project.visual}`);
+    const isLinkedTool = target === toolsTarget && !!project.link;
+    const visual=create(isLinkedTool?'a':'div',`featured-visual featured-${project.visual}`);
+    if(isLinkedTool){visual.href=project.link;visual.setAttribute('aria-label',`${project.title} 페이지로 이동`);}
     const small=create('span','visual-kicker',project.category); visual.append(small);
     if(project.image){const img=create('img','featured-photo');img.src=project.image;img.alt='';img.loading='lazy';img.onerror=()=>img.remove();visual.append(img);}else{const emblem=create('div','featured-emblem'); emblem.textContent=project.visual==='family'?'F / G':project.visual==='hibicus'?'H / C':project.visual==='image'?'I / S':'D / B'; visual.append(emblem);}
     visual.append(create('div','visual-grid'));
     const index=create('span','featured-no',project.no);visual.append(index);
-    const main=create('div','featured-content');main.append(create('p','featured-subtitle',project.subtitle));main.append(create('h3','',project.title));main.append(create('p','featured-description',project.description));
+    const main=create('div','featured-content');main.append(create('p','featured-subtitle',project.subtitle));
+    const heading=create('h3');
+    if(isLinkedTool){const titleLink=create('a','',project.title);titleLink.href=project.link;heading.append(titleLink);}
+    else{heading.textContent=project.title;}
+    main.append(heading);main.append(create('p','featured-description',project.description));
     const tags=create('div','tag-row');for(const t of project.tags) tags.append(create('span','tag',t)); main.append(tags);
     const foot=create('div','featured-foot');
     if(project.link){const a=create('a','featured-link',`${project.linkText} ${svgArrow}`);a.href=project.link;foot.append(a);}else{foot.append(create('span','featured-muted',project.linkText));}
