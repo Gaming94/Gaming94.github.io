@@ -5,6 +5,7 @@
   const create = (tag, cls, text) => { const el=document.createElement(tag); if(cls) el.className=cls; if(text!==undefined) el.textContent=text; return el; };
   const svgArrow = '↗';
   const featuredTarget = $('#featured-projects');
+  const toolsTarget = $('#tools-projects');
   const chatbotTarget = $('#chatbot-grid');
   let currentFilter = 'all';
   let lastFocus = null;
@@ -15,19 +16,23 @@
     pending: {ko:'분류 보류', en:'UNCLASSIFIED', detail:'ARCHIVE / CATEGORY PENDING'}
   };
 
-  for(const project of data.featured){
+  function renderProjectCards(items, target){
+    for(const project of items){
     const card=create('article','featured-card');
     const visual=create('div',`featured-visual featured-${project.visual}`);
     const small=create('span','visual-kicker',project.category); visual.append(small);
-    if(project.image){const img=create('img','featured-photo');img.src=project.image;img.alt='';img.loading='lazy';img.onerror=()=>img.remove();visual.append(img);}else{const emblem=create('div','featured-emblem'); emblem.textContent=project.visual==='family'?'F / G':project.visual==='hibicus'?'H / C':'D / B'; visual.append(emblem);}
+    if(project.image){const img=create('img','featured-photo');img.src=project.image;img.alt='';img.loading='lazy';img.onerror=()=>img.remove();visual.append(img);}else{const emblem=create('div','featured-emblem'); emblem.textContent=project.visual==='family'?'F / G':project.visual==='hibicus'?'H / C':project.visual==='image'?'I / S':'D / B'; visual.append(emblem);}
     visual.append(create('div','visual-grid'));
     const index=create('span','featured-no',project.no);visual.append(index);
     const main=create('div','featured-content');main.append(create('p','featured-subtitle',project.subtitle));main.append(create('h3','',project.title));main.append(create('p','featured-description',project.description));
     const tags=create('div','tag-row');for(const t of project.tags) tags.append(create('span','tag',t)); main.append(tags);
     const foot=create('div','featured-foot');
     if(project.link){const a=create('a','featured-link',`${project.linkText} ${svgArrow}`);a.href=project.link;foot.append(a);}else{foot.append(create('span','featured-muted',project.linkText));}
-    main.append(foot);card.append(visual,main);featuredTarget?.append(card);
+    main.append(foot);card.append(visual,main);target?.append(card);
+    }
   }
+  renderProjectCards(data.featured || [], featuredTarget);
+  renderProjectCards(data.tools || [], toolsTarget);
 
   function chatbotCard(bot){
     const button=create('button','chatbot-card');button.type='button';button.dataset.bot=bot.id;button.setAttribute('aria-label',`${bot.title} 상세 정보 보기`);
