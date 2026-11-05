@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#100e14">
+  <meta name="description" content="하이비커스 연대기 세계관 기록 아카이브 (초기 시안)">
+  <title>하이비커스 연대기 — World Archive</title>
+  <link rel="stylesheet" href="./world.css">
+  <script src="../../data/worlds/hibicus.js" defer></script>
+  <script src="./world.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#records">기록 바로가기</a>
+  <header class="topbar">
+    <a href="../../" class="back-link"><span aria-hidden="true">←</span> PORTFOLIO</a>
+    <span class="topbar-title">H.C. / CHRONICLE ARCHIVE</span>
+    <span class="state"><span aria-hidden="true">●</span> PROTOTYPE</span>
+  </header>
+  <main>
+    <section class="intro">
+      <div class="intro-head"><span>ARCHIVE SYSTEM / 001</span><span>DOCUMENT ACCESS: OPEN</span></div>
+      <p class="intro-type">A WORLD BEYOND THE DIALOGUE</p>
+      <h1>HIBICUS<br><em>CHRONICLE.</em></h1>
+      <p class="intro-ko">하이비커스 연대기 · 세계관 기록실</p>
+      <p class="intro-desc">이곳은 채팅봇 밖에서 세계를 탐색하기 위한 독립 아카이브입니다. 지역, 인물, 세력과 역사 기록을 분류해 열람할 수 있습니다.</p>
+      <div class="intro-actions"><a class="btn filled" href="#records">기록 열람하기 <span aria-hidden="true">↓</span></a><a class="btn" href="../../#chatbots">작품 소개 돌아가기 <span aria-hidden="true">↗</span></a></div>
+      <span class="intro-number" aria-hidden="true">01 / H</span>
+    </section>
+    <div class="section-rule"><span>WORLD INFORMATION</span><span>THE ARCHIVE IS UNDER CONSTRUCTION</span></div>
+    <section class="regions" aria-labelledby="world-title">
+      <div class="section-label"><span>01 / GEOGRAPHICAL RECORDS</span><span>WORLD ARCHIVE</span></div>
+      <h2 id="world-title">세계 기록</h2>
+      <p class="section-sub">지역을 선택하면 설명이 교체됩니다. 아래 항목은 기능을 확인하기 위한 예시 데이터입니다.</p>
+      <div class="region-buttons" id="region-buttons" role="group" aria-label="지역 선택"></div>
+      <div class="region-display" id="region-display"><div class="region-art"><div class="region-sigil">H</div><span class="region-art-label" id="region-label">REGION / RECORD</span></div><div class="region-content"><p class="section-label solo" id="region-meta">AREA / 000</p><h3 id="region-name">지역 기록</h3><p id="region-desc"></p><div class="region-tags" id="region-tags"></div></div></div>
+    </section>
+    <section class="records" id="records" aria-labelledby="record-title">
+      <div class="section-label"><span>02 / DATABASE</span><span id="record-total">00 RECORDS</span></div>
+      <h2 id="record-title">기록 열람</h2>
+      <p class="section-sub">분류를 선택하거나 키워드로 검색하세요. 각 기록을 누르면 상세 설명이 나타납니다.</p>
+      <div class="record-controls"><div class="record-tabs" id="record-tabs" aria-label="기록 분류"><button type="button" data-kind="all" class="on" aria-pressed="true">전체</button><button type="button" data-kind="character" aria-pressed="false">인물</button><button type="button" data-kind="faction" aria-pressed="false">세력</button><button type="button" data-kind="history" aria-pressed="false">역사</button></div><label class="record-search"><span aria-hidden="true">⌕</span><span class="sr-only">기록 검색</span><input id="record-search" type="search" placeholder="이름, 소속, 키워드 검색"></label></div>
+      <div class="record-list" id="record-list"></div>
+      <p class="under-construction">※ 이 페이지의 내용은 아직 시안입니다. 실제 세계관 설정과 초상화는 추후 원본 자료로 등록합니다.</p>
+    </section>
+  </main>
+  <footer><span>HIBICUS CHRONICLE // ARCHIVE DRAFT</span><a href="../../">KAOR CREATIVE ARCHIVE ↗</a></footer>
+  <dialog class="record-dialog" id="record-dialog"><button class="close" id="record-close" type="button" aria-label="닫기">×</button><div class="modal-inner"><p id="modal-type">RECORD</p><span class="demo-badge">SAMPLE DATA</span><h2 id="modal-name"></h2><p class="modal-sub" id="modal-sub"></p><div class="modal-desc" id="modal-desc"></div><div class="modal-bottom" id="modal-tags"></div></div></dialog>
+</body>
+</html>
