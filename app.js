@@ -43,7 +43,7 @@
   function renderBots(){
     if(!chatbotTarget) return;
     const q=($('#chatbot-search')?.value||'').trim().toLocaleLowerCase();
-    const matches=data.chatbots.filter(b=>(currentFilter==='all'||b.type===currentFilter)&&[b.title,b.tagline,b.description,...b.tags].join(' ').toLocaleLowerCase().includes(q));
+    const matches=data.chatbots.filter(b=>(currentFilter==='all'||b.type===currentFilter||(currentFilter==='simulation'&&b.type==='world'))&&[b.title,b.tagline,b.description,...b.tags].join(' ').toLocaleLowerCase().includes(q));
     chatbotTarget.replaceChildren(...matches.map(chatbotCard));
     if(!matches.length) chatbotTarget.append(create('p','empty-state','검색 결과가 없습니다. 다른 검색어를 입력해 주세요.'));
     const counter=$('#chatbots-counter');if(counter)counter.textContent=`ARCHIVE / ${String(matches.length).padStart(2,'0')}`;
