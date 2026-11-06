@@ -117,7 +117,7 @@ window.HIBICUS_WORLD = {
       "eyebrow": "STATE CHURCH",
       "location": "하이비커스 · 브리타흐 대성당",
       "summary": "광휘의 신 브리타흐를 섬기는 하이비커스의 국교. 다섯 교구, 사제단과 힐러단으로 구성된다.",
-      "description": "사제단은 마리안, 힐러단은 아이바가 이끌며 전쟁을 치르는 왕자들에게 성직자를 파견한다. 교황 프리드의 봉인 이후 마녀협회에 강한 적의를 품고 있다.",
+      "description": "사제단은 마리안, 힐러단은 아이바가 이끌며 전쟁을 치르는 왕자들에게 성직자를 파견한다. 교단은 마녀협회에 강한 적의를 품고 있다.",
       "relations": [
         "하이비커스: 국교",
         "장미교단: 종교적 대립"
@@ -553,8 +553,8 @@ window.HIBICUS_WORLD = {
       "name": "프리드",
       "faction": "britach-church",
       "role": "교황",
-      "summary": "마녀협회의 봉인으로 자리를 비운 브리타흐 교단의 교황.",
-      "description": "어린 소년의 외형을 지닌 교황. 교단이 그를 건드린 마녀협회에 적대적이다.",
+      "summary": "현재 공식 활동을 볼 수 없는 브리타흐 교단의 교황.",
+      "description": "소년의 외형을 지닌 브리타흐 교단의 교황. 교단의 성직자들이 왕국을 보좌한다.",
       "image": "../../assets/chatbots/hibicus/portraits/fried.webp",
       "secret": "봉인 뒤 금발·금안에서 은발·흑안으로 변했고, 타락의 조짐과 함께 전투 시 보름달이 떠오른다."
     },
@@ -671,11 +671,11 @@ window.HIBICUS_WORLD = {
       "id": "witch-commander",
       "name": "마녀장",
       "faction": "witches",
-      "role": "기억에서 지워진 지도자",
-      "summary": "모두에게 잊힌 채 모습을 감춘 마녀장.",
+      "role": "마녀협회 인물",
+      "summary": "마녀협회의 과거와 관련된 신비로운 인물.",
       "description": "은발·은안에 연보라 옷과 월계관을 착용한다.",
       "image": "../../assets/chatbots/hibicus/portraits/witch-commander.webp",
-      "secret": "모두에게서 잊혔으며 스스로도 기억을 잃었다. 최초 설립자와 동일인이라는 확정 정보는 없다."
+      "secret": "모두에게서 잊힌 마녀장은 기억을 잃었다. 연보라 옷과 월계관을 착용한 은발·은안의 여성. 최초 설립자와 동일인물이라는 확정 정보는 없다."
     },
     {
       "id": "tyra",
@@ -736,10 +736,10 @@ window.HIBICUS_WORLD = {
       "name": "로크엘러",
       "faction": "bloodlust",
       "role": "암살자 길드 수장",
-      "summary": "마녀협회에 의해 봉인된 블러드러스트의 수장.",
-      "description": "갈색 머리의 소년 외형. 길드원들은 그가 누구였는지 기억을 잃고 봉인을 풀기 위해 움직인다.",
+      "summary": "현재 모습을 드러내지 않는 블러드러스트의 수장.",
+      "description": "갈색 머리의 소년 외형. 세이비의 스승이자 암살자 길드 블러드러스트의 수장.",
       "image": "../../assets/chatbots/hibicus/portraits/rockeller.webp",
-      "secret": "봉인 뒤 타락의 조짐이 보이며 전투 시 붉은 달이 떠오른다."
+      "secret": "로크엘러는 마녀협회에 봉인됐고 길드원들은 그의 얼굴에 대한 기억을 잃었다. 봉인 뒤 타락의 조짐이 보이며 전투 시 붉은 달이 떠오른다."
     },
     {
       "id": "seibi",
