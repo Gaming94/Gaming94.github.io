@@ -126,6 +126,9 @@
   }
   function renderOrders(targetId,orders){
     const host=$('#'+targetId);if(!host)return;
+    const heading=node('div','order-row order-head');
+    heading.append(node('strong','','영주'),node('span','','거점'),node('span','','기사단·병단'),node('span','','문양'));
+    host.append(heading);
     for(const order of orders){
       const row=node('div','order-row');
       row.append(node('strong','',order.lord),node('span','',order.seat),node('span','',order.unit),node('span','',order.sigil));
