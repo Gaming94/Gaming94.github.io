@@ -3,49 +3,117 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#100e14">
-  <meta name="description" content="하이비커스 연대기 세계관 기록 아카이브 (초기 시안)">
-  <title>하이비커스 연대기 — World Archive</title>
+  <meta name="theme-color" content="#140f19">
+  <meta name="description" content="하이비커스 연대기 공식 창작 설정집. 대륙 지도와 국가·교단·길드, 73인의 등장인물, 지역, 역사와 스포일러 보호된 비밀 기록.">
+  <meta property="og:title" content="하이비커스 연대기 | 대륙 기록보관소">
+  <meta property="og:description" content="전쟁과 신앙, 숲과 정원, 마녀와 암살자의 대륙. 당신의 이야기는 어디서 시작될까.">
+  <meta property="og:image" content="https://gaming94.github.io/assets/chatbots/hibicus/hibicus.webp">
+  <title>하이비커스 연대기 — 세계관 아카이브 | KAOR NOTE</title>
   <link rel="stylesheet" href="./world.css">
   <link rel="stylesheet" href="../../assets/css/page-home-link.css">
   <script src="../../data/worlds/hibicus.js" defer></script>
   <script src="./world.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#records">기록 바로가기</a>
-  <header class="topbar">
-    <span class="topbar-title">H.C. / CHRONICLE ARCHIVE</span>
-    <span class="state"><span aria-hidden="true">●</span> PROTOTYPE</span>
-    <a class="home-link" href="../../">KAOR NOTE <span aria-hidden="true">↗</span></a>
+  <a class="skip" href="#world">본문 바로가기</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="archive-brand"><span class="brand-emblem" aria-hidden="true">H.</span><span><strong>HIBICUS CHRONICLE</strong><small>KAOR / WORLD ARCHIVE</small></span></a>
+      <nav aria-label="설정집 목차" class="site-nav">
+        <a href="#world">세계관</a><a href="#factions">세력</a><a href="#personnel">인물</a><a href="#regions">지역</a><a href="#chronicles">연대기</a><a href="#mysteries">비밀 기록</a>
+      </nav>
+      <a class="home-link" href="../../">KAOR NOTE <span aria-hidden="true">↗</span></a>
+    </div>
   </header>
-  <main>
-    <section class="intro">
-      <div class="intro-head"><span>ARCHIVE SYSTEM / 001</span><span>DOCUMENT ACCESS: OPEN</span></div>
-      <p class="intro-type">A WORLD BEYOND THE DIALOGUE</p>
-      <h1>HIBICUS<br><em>CHRONICLE.</em></h1>
-      <p class="intro-ko">하이비커스 연대기 · 세계관 기록실</p>
-      <p class="intro-desc">이곳은 채팅봇 밖에서 세계를 탐색하기 위한 독립 아카이브입니다. 지역, 인물, 세력과 역사 기록을 분류해 열람할 수 있습니다.</p>
-      <div class="intro-actions"><a class="btn filled" href="#records">기록 열람하기 <span aria-hidden="true">↓</span></a><a class="btn" href="../../#chatbots">작품 소개 돌아가기 <span aria-hidden="true">↗</span></a></div>
-      <span class="intro-number" aria-hidden="true">01 / H</span>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="overline"><span class="overline-icon" aria-hidden="true">✦</span> CONTINENTAL RECORDS / 001</div>
+          <h1 id="hero-title">HIBICUS<br><em>CHRONICLE.</em></h1>
+          <p class="hero-ko">하이비커스 연대기</p>
+          <p class="hero-lead">왕국과 공국의 전쟁, 숲과 정원의 대립,<br>마녀들의 장난과 암살자들의 추격.</p>
+          <p class="hero-desc">대륙 한복판에서 시작되는 자유로운 모험. 어느 국가와 인물을 만나고 어떤 길을 선택할지는 당신의 몫이다.</p>
+          <div class="hero-actions"><a href="#world" class="btn btn-primary">세계 탐험하기 <span aria-hidden="true">↓</span></a><a href="https://babechat.ai/character/u/465a5dd4-05ab-4179-a2c4-fd42cb58fe32/profile" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">원작 채팅 열기 <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <figure class="hero-portrait"><img src="../../assets/chatbots/hibicus/hibicus.webp" alt="하이비커스 연대기 대표 이미지" loading="eager"><figcaption>THE CONTINENT IS YOURS TO EXPLORE</figcaption></figure>
+      </div>
+      <div class="hero-fade" aria-hidden="true"></div>
     </section>
-    <div class="section-rule"><span>WORLD INFORMATION</span><span>THE ARCHIVE IS UNDER CONSTRUCTION</span></div>
-    <section class="regions" aria-labelledby="world-title">
-      <div class="section-label"><span>01 / GEOGRAPHICAL RECORDS</span><span>WORLD ARCHIVE</span></div>
-      <h2 id="world-title">세계 기록</h2>
-      <p class="section-sub">지역을 선택하면 설명이 교체됩니다. 아래 항목은 기능을 확인하기 위한 예시 데이터입니다.</p>
-      <div class="region-buttons" id="region-buttons" role="group" aria-label="지역 선택"></div>
-      <div class="region-display" id="region-display"><div class="region-art"><div class="region-sigil">H</div><span class="region-art-label" id="region-label">REGION / RECORD</span></div><div class="region-content"><p class="section-label solo" id="region-meta">AREA / 000</p><h3 id="region-name">지역 기록</h3><p id="region-desc"></p><div class="region-tags" id="region-tags"></div></div></div>
-    </section>
-    <section class="records" id="records" aria-labelledby="record-title">
-      <div class="section-label"><span>02 / DATABASE</span><span id="record-total">00 RECORDS</span></div>
-      <h2 id="record-title">기록 열람</h2>
-      <p class="section-sub">분류를 선택하거나 키워드로 검색하세요. 각 기록을 누르면 상세 설명이 나타납니다.</p>
-      <div class="record-controls"><div class="record-tabs" id="record-tabs" aria-label="기록 분류"><button type="button" data-kind="all" class="on" aria-pressed="true">전체</button><button type="button" data-kind="character" aria-pressed="false">인물</button><button type="button" data-kind="faction" aria-pressed="false">세력</button><button type="button" data-kind="history" aria-pressed="false">역사</button></div><label class="record-search"><span aria-hidden="true">⌕</span><span class="sr-only">기록 검색</span><input id="record-search" type="search" placeholder="이름, 소속, 키워드 검색"></label></div>
-      <div class="record-list" id="record-list"></div>
-      <p class="under-construction">※ 이 페이지의 내용은 아직 시안입니다. 실제 세계관 설정과 초상화는 추후 원본 자료로 등록합니다.</p>
-    </section>
+    <div class="statistics" aria-label="설정집 수록 현황"><div class="stats-inner"><div><strong id="stat-factions">20</strong><span>조직·세력</span></div><div><strong id="stat-people">73</strong><span>인물 초상화</span></div><div><strong id="stat-regions">09</strong><span>지역 기록</span></div><div><strong id="stat-mysteries">10</strong><span>비밀 기록</span></div></div></div>
+    <div class="content-shell">
+      <section class="content-section world" id="world" aria-labelledby="world-title">
+        <div class="section-heading"><div><span class="section-kicker">01 / THE CONTINENT</span><h2 id="world-title">세계의 한가운데서</h2><p>국경은 흔들리고 소문은 오간다. 세계수 여관에는 언제나 새로운 이야기가 모인다.</p></div><span class="section-counter">WORLD OVERVIEW</span></div>
+        <div class="world-layout">
+          <div class="map-frame"><a href="../../assets/chatbots/hibicus/지도.webp" target="_blank" rel="noopener noreferrer" aria-label="대륙 지도 원본 이미지 보기"><img src="../../assets/chatbots/hibicus/지도.webp" alt="하이비커스 연대기의 대륙 지도" loading="lazy"><span class="map-open">지도 크게 보기 ↗</span></a><div class="map-caption"><span>CONTINENTAL MAP / SOURCE ARTWORK</span><span>원본 지도 이미지</span></div></div>
+          <div class="world-summary">
+            <div class="summary-emblem" aria-hidden="true">❦</div>
+            <span class="card-kicker">YOUR STORY BEGINS HERE</span>
+            <h3>세계수 여관</h3>
+            <p>대륙 중앙, 사람들이 모여 이야기를 나누는 여관. 낯선 여행자는 이곳에서 각국의 소식과 인물들의 이야기를 듣는다.</p>
+            <div class="inn-dialogue"><span>여관에서 들려오는 말들</span><div id="inn-rumors"></div></div>
+            <p class="inn-innkeeper">여관주인 피아가 다가온다. 그는 대륙의 정세와 사람들에 대해 무엇이 궁금한지 묻는다.</p>
+            <a class="text-link" href="https://babechat.ai/character/u/465a5dd4-05ab-4179-a2c4-fd42cb58fe32/profile" target="_blank" rel="noopener noreferrer">세계수 여관에서 시작하기 ↗</a>
+          </div>
+        </div>
+        <div class="conflict-grid">
+          <article><span>01 / WAR</span><h3>하이비커스 ↔ 로젠탈</h3><p>왕국의 존속과 공국의 독립. 아발론 강 너머 두 기사단이 대치한다.</p></article>
+          <article><span>02 / NATURE</span><h3>샤이엔 ↔ 민테아</h3><p>숲을 지키려는 이들과 대륙을 정원으로 바꾸려는 이들의 대립.</p></article>
+          <article><span>03 / SHADOWS</span><h3>마녀협회 ↔ 블러드러스트</h3><p>봉인과 비밀을 둘러싸고 충돌하는 마녀들과 암살자 길드.</p></article>
+        </div>
+      </section>
+      <section class="content-section" id="factions" aria-labelledby="factions-title">
+        <div class="section-heading"><div><span class="section-kicker">02 / THE POWERS</span><h2 id="factions-title">대륙의 세력들</h2><p>국가와 종교, 암살자 길드부터 용병단과 해적단까지. 각자의 신념과 이해가 교차한다.</p></div><span class="section-counter" id="faction-count">FACTIONS</span></div>
+        <div class="filter-bar" role="group" aria-label="세력 분류">
+          <button type="button" class="chip active" data-faction-filter="all" aria-pressed="true">전체 세력</button>
+          <button type="button" class="chip" data-faction-filter="nation" aria-pressed="false">국가 · 주요 세력</button>
+          <button type="button" class="chip" data-faction-filter="power" aria-pressed="false">마녀 · 길드</button>
+          <button type="button" class="chip" data-faction-filter="religion" aria-pressed="false">종교</button>
+          <button type="button" class="chip" data-faction-filter="other" aria-pressed="false">기타 세력</button>
+        </div>
+        <div id="faction-grid" class="faction-grid"></div>
+      </section>
+      <section class="content-section" id="personnel" aria-labelledby="personnel-title">
+        <div class="section-heading"><div><span class="section-kicker">03 / WHO'S WHO</span><h2 id="personnel-title">대륙 인물 도감</h2><p>업로드된 인물 초상화와 원문 인물 설정을 대조해 정리한 기록들.</p></div><span class="section-counter" id="person-count">PERSONNEL</span></div>
+        <div class="person-tools">
+          <label class="search-wrap"><span class="sr-only">인물 검색</span><span aria-hidden="true">⌕</span><input id="person-search" type="search" placeholder="인물 이름 · 소속 · 특징 검색" autocomplete="off"></label>
+          <label class="select-wrap"><span class="sr-only">인물 소속 분류</span><select id="person-faction"><option value="all">모든 소속 보기</option></select></label>
+        </div>
+        <div id="person-grid" class="person-grid"></div>
+        <p class="data-note">인물 설명은 제공된 원본 전문·로어북 기준이며, 핵심 반전이 담긴 추가 기록은 스포일러 해제 시에만 표시돼.</p>
+      </section>
+      <section class="content-section" id="regions" aria-labelledby="regions-title">
+        <div class="section-heading"><div><span class="section-kicker">04 / PLACES & BORDERS</span><h2 id="regions-title">영토와 길목</h2><p>세계수를 중심으로 펼쳐지는 대륙의 주요 지역과 거점.</p></div><span class="section-counter">LOCATION RECORDS</span></div>
+        <div id="region-grid" class="region-grid"></div>
+        <p class="data-note">거리와 방향은 원본 설정에 적힌 값이야. 지도 이미지의 비율이나 실제 지형의 축척을 추측해 보정하지 않았어.</p>
+      </section>
+      <section class="content-section" id="chronicles" aria-labelledby="chronicles-title">
+        <div class="section-heading"><div><span class="section-kicker">05 / CHRONICLES</span><h2 id="chronicles-title">격동의 기록</h2><p>세력 간의 전쟁과 변화, 현재 대륙에서 벌어지는 사건들.</p></div><span class="section-counter">EVENT RECORDS</span></div>
+        <div id="chronicle-list" class="chronicle-list"></div>
+      </section>
+      <section class="content-section mysteries" id="mysteries" aria-labelledby="mysteries-title">
+        <div class="section-heading"><div><span class="section-kicker">06 / RESTRICTED LORE</span><h2 id="mysteries-title">기록되지 않은 진실</h2><p>세계관의 핵심 반전과 숨겨진 정체를 다루는 비밀 기록실.</p></div><span class="section-counter">LORE & MYSTERIES</span></div>
+        <div class="spoiler-warning" id="spoiler-warning">
+          <div class="warning-symbol" aria-hidden="true">⚠</div>
+          <div class="warning-copy"><span class="warning-kicker">SPOILER WARNING / 열람 주의</span><h3>여기부터는 스포일러가 포함돼.</h3><p>마녀협회의 진짜 목적, 장미교단의 비밀, 일부 인물의 숨겨진 정체 등 플레이 중 밝혀질 수 있는 설정을 포함해. 기본적으로 내용은 잠겨 있으며, 직접 동의한 방문자만 볼 수 있어.</p>
+            <button type="button" class="warning-button" id="spoiler-toggle" aria-expanded="false">비밀 기록 열람하기 <span aria-hidden="true">↗</span></button>
+          </div>
+        </div>
+        <div id="mystery-grid" class="mystery-grid" hidden></div>
+      </section>
+      <section class="outro"><div><span class="section-kicker">THE WORLD IS WAITING</span><h2>어떤 존재가 될지는<br>당신의 몫.</h2><p>여관의 문을 열고, 대륙의 소문을 직접 확인해 보자.</p></div><a class="btn btn-primary" href="https://babechat.ai/character/u/465a5dd4-05ab-4179-a2c4-fd42cb58fe32/profile" target="_blank" rel="noopener noreferrer">하이비커스 연대기 플레이 ↗</a></section>
+    </div>
   </main>
-  <footer><span>HIBICUS CHRONICLE // ARCHIVE DRAFT</span><a href="../../">KAOR CREATIVE ARCHIVE ↗</a></footer>
-  <dialog class="record-dialog" id="record-dialog"><button class="close" id="record-close" type="button" aria-label="닫기">×</button><div class="modal-inner"><p id="modal-type">RECORD</p><span class="demo-badge">SAMPLE DATA</span><h2 id="modal-name"></h2><p class="modal-sub" id="modal-sub"></p><div class="modal-desc" id="modal-desc"></div><div class="modal-bottom" id="modal-tags"></div></div></dialog>
+  <footer class="site-footer"><span>HIBICUS CHRONICLE / KAOR NOTE</span><span>작품 설정 정리 · 비공개 AI 출력 명령 미포함</span><a href="../../">KAOR NOTE ↗</a></footer>
+  <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title">
+    <div class="detail-shell">
+      <button id="detail-close" class="detail-close" type="button" aria-label="상세 기록 닫기">×</button>
+      <div id="detail-art" class="detail-art"></div>
+      <div class="detail-copy"><span id="detail-type" class="card-kicker"></span><h2 id="detail-title"></h2><p id="detail-affiliation" class="detail-affiliation"></p><p id="detail-description" class="detail-description"></p><div id="detail-relations" class="detail-relations"></div><div id="detail-secret" class="detail-secret"></div><span class="detail-foot">HIBICUS · ARCHIVE RECORD</span></div>
+    </div>
+  </dialog>
+  <dialog id="spoiler-confirm" class="confirm-dialog" aria-labelledby="confirm-title">
+    <div class="confirm-shell"><span class="warning-kicker">SPOILER WARNING</span><h2 id="confirm-title">세계관의 핵심 비밀을 공개할까?</h2><p>일부 인물의 숨겨진 신분, 교단의 실체, 마녀협회의 목적이 공개돼. 이 설정을 처음부터 알고 싶지 않다면 취소해 줘.</p><div class="confirm-actions"><button type="button" id="confirm-cancel" class="btn btn-secondary">취소하고 돌아가기</button><button type="button" id="confirm-reveal" class="btn btn-primary">스포일러 열람하기</button></div></div>
+  </dialog>
 </body>
 </html>
