@@ -1,0 +1,169 @@
+/* VALENOR / WINTER LIGHT THEME
+   A frost-white palette over the existing layout: preserves all responsive and interactive rules. */
+:root{
+  color-scheme:light;
+  --bg:#f4f8fb;
+  --bg2:#eaf3f8;
+  --panel:#ffffff;
+  --panel2:#edf5f9;
+  --border:#d3e1e9;
+  --text:#233b4c;
+  --muted:#617b8b;
+  --frost:#286986;
+  --gold:#926f4f;
+  --mint:#547f79;
+}
+body{
+  color:var(--text);
+  background:radial-gradient(ellipse at 88% 15%,rgba(220,236,247,.46),transparent 30%),var(--bg);
+}
+a:hover{color:#286986}
+:focus-visible{outline-color:#377e9a}
+.skip-link{background:white;color:#233b4c;box-shadow:0 5px 18px #2b506d22}
+.site-header{
+  background:rgba(250,253,255,.96);
+  border-bottom:1px solid #d4e2eb;
+  box-shadow:0 5px 26px #668ba513;
+}
+.brand strong{color:#243d50}
+.brand strong span{color:#a78365}
+.brand small{color:#7c92a0}
+.main-nav a{color:#456577}
+.main-nav a:hover{color:#195a78}
+.hero{background:#ecf4f9}
+.hero-art{
+  background-image:
+    linear-gradient(90deg,rgba(246,250,253,.98) 0%,rgba(246,250,253,.93) 30%,rgba(246,250,253,.52) 62%,rgba(240,249,254,.2) 100%),
+    linear-gradient(0deg,#f4f8fb 0%,transparent 32%),
+    url("../../assets/chatbots/northern-domain-survival/illust/domain-entrance.webp");
+  background-position:center;
+}
+.hero:after{background:linear-gradient(180deg,rgba(251,254,255,.25),transparent 34%,#f4f8fb 100%)}
+.hero-top,.hero-bottom{color:#567789;text-shadow:none}
+.hero-bottom{border-top-color:#8db0c53d}
+.eyebrow,.section-index,.section-aside,.card-label{color:#60869a}
+.hero h1{color:#223b4e}
+.hero h1 em{color:#347896}
+.hero-en{color:#66899d}
+.hero-description{color:#334e60;text-shadow:none}
+.diamond{color:#7ea6bc}
+.primary-button{background:#2c6a89;color:#fff;box-shadow:0 7px 18px #22587824}
+.primary-button:hover{background:#195a79;color:#fff}
+.outline-button{background:#ffffffb8;color:#2a586f;border-color:#9db9c9}
+.outline-button:hover{background:#fff;color:#1d576f;border-color:#6d9aae}
+.ribbon{background:#fff;border-color:#d7e4eb}
+.ribbon-shell>div{border-color:#dde9ef}
+.ribbon-number{color:#2c617d}
+.ribbon-caption{color:#668392}
+.section{border-bottom-color:#d5e3eb}
+.section-heading p{color:#6d8594}
+.section-aside{color:#8ba6b5}
+.quote-block{
+  background:linear-gradient(110deg,#e9f3f9,#fff);
+  border:1px solid #d1e3eb;
+  box-shadow:0 8px 23px #486f8310;
+}
+.quote-mark{color:#95b8ca}
+.quote-block blockquote{color:#34566b}
+.quote-block>span:last-child{color:#6d8798}
+.story-index{color:#5a8599}
+.story-copy h3{color:#294a5d}
+.story-copy p{color:#607888}
+.story-photo{background:#e4f0f6;border-color:#d0e0e9;box-shadow:0 12px 25px #36556b0d}
+.house-legend{color:#607e8f}
+.house-card{background:#fff;border-color:#d7e4ec;box-shadow:0 6px 16px #285a7310}
+.house-card:before{background:#7faec6}
+.house-card[data-kind="ruling"]:before{background:#c49e73}
+.house-card[data-kind="civilian"]:before{background:#86b6a1}
+.house-kind{color:#6a91a5}
+.house-card h3{color:#294d62}
+.house-card .house-role{color:#956f4c}
+.house-card p{color:#566f7f}
+.house-motto{border-top-color:#e1eaf0;color:#547286!important}
+.house-meta{color:#728b99}
+.people-filters .filter{
+  background:#fff;
+  color:#57788b;
+  border-color:#cddfe8;
+}
+.people-filters .filter:hover{color:#215b78;border-color:#83a9bd}
+.people-filters .filter.active{background:#34718f;color:#fff;border-color:#34718f}
+.people-search{background:#fff;border-color:#cbdde7}
+.search-glyph{color:#7a9daf}
+.people-search input{color:#294c60}
+.people-search input::placeholder{color:#859cab}
+.person-card{
+  background:#fff;
+  color:#29475a;
+  border-color:#d5e3eb;
+  box-shadow:0 5px 18px #37617b0b;
+}
+.person-card:hover{border-color:#8db7cb;box-shadow:0 11px 22px #37617b16}
+.person-photo{background:radial-gradient(circle at 48% 34%,#f9fcfe,#dcebf3 80%)}
+.person-group{color:#628ca4}
+.person-card small{color:#6a8797}
+.person-card .person-more{color:#377491}
+.empty{border-color:#d7e6ed;color:#638396;background:#fff}
+.subheading{color:#2d5167}
+.subheading span{color:#819baa}
+.region-card,.facility-card{background:#fff;border-color:#d5e4ed;box-shadow:0 6px 19px #305b7510}
+.region-card small{color:#688c9d}
+.region-card h4{color:#2c536a}
+.region-card p{color:#667f8e}
+.facility-card strong{color:#2a536a}
+.facility-card small{color:#718d9c}
+.giant-notice{background:#fff9f1;border-color:#e6d7c5}
+.giant-notice strong{color:#93633a}
+.giant-notice p{color:#816c59}
+.giant-record{background:#fff;border-color:#d3e2ea}
+.giant-record:last-child{background:#fff2e9;border-color:#d9b89e}
+.giant-record summary{color:#315269}
+.giant-record summary:after{color:#4b7890}
+.giant-no{color:#5a869b}
+.giant-record:last-child .giant-no{color:#a77a59}
+.giant-label strong{color:#2c5369}
+.giant-label small{color:#718a97}
+.giant-record>p{border-top-color:#e0e9ee;color:#577184}
+.mode-card{background:#fff;border-color:#d5e5ec;box-shadow:0 5px 18px #406a8210}
+.mode-card .mode-label{color:#7e9eae}
+.mode-card h4{color:#2c546a}
+.mode-card p{color:#617e8c}
+.upgrade-track li{background:#fdfefe;border-color:#d2e2eb}
+.upgrade-track li:before{background:#7caabe}
+.upgrade-track strong{color:#34566b}
+.upgrade-track small{color:#7593a2}
+.system-panels article{background:#fff;border-color:#d6e5ed}
+.system-panels h3{color:#2b5368}
+.system-panels p{color:#647f8e}
+.resource-tags span{color:#46758c;border-color:#c2d9e4;background:#f3f9fc}
+.gallery-note{color:#758e9d}
+.encounter-card{background:#fff;border-color:#d5e4ed}
+.encounter-card strong{color:#335b70}
+.encounter-card small{color:#708998}
+.outro{background:linear-gradient(110deg,#e0eef7,#f7fbfe 75%);border-color:#cbdfe8;box-shadow:0 12px 32px #37647c10}
+.outro h2{color:#2c566b}
+.outro p{color:#5d7c8d}
+.site-footer{background:#fff;border-top:1px solid #d4e2eb;color:#718b9b}
+.site-footer a{color:#3c7693}
+.person-dialog{background:#fff;border:1px solid #a7c2d2;color:#2c4e63;box-shadow:0 25px 90px #2746594d}
+.person-dialog::backdrop{background:#15344e99}
+.dialog-photo{background:radial-gradient(circle at 50% 30%,#f9fcfe,#dcecf5 78%)}
+.alternate-photos img{background:#edf6fa;border-color:#c7dce7}
+.alternate-photos span{color:#678797}
+.dialog-close{background:#fff;border:1px solid #bdd3df;color:#36677f}
+.dialog-close:hover{background:#edf6fc}
+.dialog-content h2{color:#23475d}
+.detail-role{color:#49718a}
+.detail-family{color:#748d9b;border-top-color:#dae8ef}
+.dialog-content p{color:#5c7888}
+.dialog-content blockquote{border-left-color:#ba9978;color:#775c45}
+.dialog-foot{color:#8ba5b3}
+@media(max-width:760px){
+  .hero-art{
+    background-image:
+      linear-gradient(90deg,rgba(246,250,253,.96) 0%,rgba(246,250,253,.76) 58%,rgba(246,250,253,.53) 100%),
+      linear-gradient(0deg,#f4f8fb,transparent 43%),
+      url("../../assets/chatbots/northern-domain-survival/illust/domain-entrance.webp");
+    background-position:60% center;
+  }
+}
