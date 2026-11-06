@@ -179,6 +179,10 @@
       card.append(node('span','',String(i+1).padStart(2,'0')+' / '+s.category),node('h3','',s.heading),node('p','',s.content));
       grid.append(card);
     });
+    const link=node('a','secret-link');
+    link.href='../hibicus/';
+    link.append(node('strong','','잊힌 시대의 기록 더 살펴보기'),node('span','','하이비커스 연대기 세계관 아카이브 ↗'));
+    grid.append(link);
   }
   function renderSpoilerState(){
     const button=$('#spoiler-toggle');if(button){
