@@ -89,7 +89,7 @@ window.ARCHIVE_DATA = {
       worldUrl: ''
     },
     {
-      id: 'northern-lord',
+      id: 'northern-domain',
       title: '북부 영주 생존 투쟁기',
       type: 'world',
       tagline: '북부에서 시작되는 생존과 경영',
