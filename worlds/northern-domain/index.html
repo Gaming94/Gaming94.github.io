@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#101d29">
+  <meta name="theme-color" content="#f4f8fb">
   <meta name="description" content="북부 영주 생존 투쟁기 — 발레노르의 역사, 가문과 인물, 설원, 열두 거인과 영지 재건을 기록한 공식 창작 아카이브.">
   <meta property="og:title" content="북부 영주 생존 투쟁기 | 발레노르 기록보관소">
   <meta property="og:description" content="열두 거인의 전쟁 뒤, 아이들만 남은 북부 변경백령의 이야기.">
   <meta property="og:image" content="https://gaming94.github.io/assets/chatbots/northern-domain-survival/northern-domain-survival.webp">
   <title>북부 영주 생존 투쟁기 — 발레노르 기록보관소 | KAOR NOTE</title>
   <link rel="stylesheet" href="./world.css">
+  <link rel="stylesheet" href="./snow.css">
   <script src="../../data/worlds/northern-domain.js" defer></script>
   <script src="./world.js" defer></script>
 </head>
@@ -19,9 +20,9 @@
     <div class="header-shell">
       <a class="brand" href="../../" aria-label="KAOR NOTE 메인으로"><strong>KAOR<span>.</span> NOTE</strong><small>WORLD ARCHIVE / 01</small></a>
       <nav class="main-nav" aria-label="세계관 기록">
-        <a href="#history">서사</a><a href="#families">가문</a><a href="#characters">인물</a><a href="#places">지역</a><a href="#giants">거인</a><a href="#systems">시스템</a>
+        <a href="#history">서사</a><a href="#characters">인물</a><a href="#places">지역</a><a href="#families">가문</a><a href="#giants">거인</a><a href="#systems">시스템</a>
       </nav>
-      <a class="header-return" href="../../#chatbots">포트폴리오 <span aria-hidden="true">↗</span></a>
+      <a class="home-link" href="../../">KAOR NOTE <span aria-hidden="true">↗</span></a>
     </div>
   </header>
   <main>
@@ -54,13 +55,8 @@
         <div class="quote-block"><span class="quote-mark" aria-hidden="true">“</span><blockquote>성벽은 돌로 세우는 것이 아니라,<br>사람으로 세운다.</blockquote><span>발레노르 가문의 가언</span></div>
         <div id="story-track" class="story-track"></div>
       </section>
-      <section class="section families" id="families" aria-labelledby="families-title">
-        <div class="section-heading"><div><span class="section-index">02 / BLOODLINES</span><h2 id="families-title">계승하는 가문들</h2><p>돌아오지 못한 부모들이 남긴 자리. 아이들은 각자의 이름으로 그 자리를 지킨다.</p></div><span class="section-aside">HOUSE RECORDS</span></div>
-        <div class="house-legend"><span><i class="legend-dot dot-royal"></i>변경백가</span><span><i class="legend-dot dot-knight"></i>다섯 기사 가문</span><span><i class="legend-dot dot-civilian"></i>평민 가문</span></div>
-        <div id="house-list" class="house-list"></div>
-      </section>
       <section class="section people" id="characters" aria-labelledby="people-title">
-        <div class="section-heading"><div><span class="section-index">03 / PERSONNEL</span><h2 id="people-title">남겨진 사람들</h2><p>가문과 관계, 지켜야 할 약속을 따라 인물 기록을 열람하세요.</p></div><span class="section-aside" id="people-count">PERSONNEL FILES</span></div>
+        <div class="section-heading"><div><span class="section-index">02 / PERSONNEL</span><h2 id="people-title">남겨진 사람들</h2><p>가문과 관계, 지켜야 할 약속을 따라 인물 기록을 열람하세요.</p></div><span class="section-aside" id="people-count">PERSONNEL FILES</span></div>
         <div class="people-tools">
           <div class="people-filters" role="group" aria-label="인물 분류">
             <button class="filter active" type="button" data-group="all" aria-pressed="true">전체</button>
@@ -76,11 +72,16 @@
         <div id="people-list" class="people-grid"></div>
       </section>
       <section class="section places" id="places" aria-labelledby="places-title">
-        <div class="section-heading"><div><span class="section-index">04 / NORTHERN TERRITORY</span><h2 id="places-title">얼어붙은 땅의 기록</h2><p>설원과 호수, 아이들이 다시 일으켜 세워야 할 생업의 터전.</p></div><span class="section-aside">TERRITORY / FACILITIES</span></div>
+        <div class="section-heading"><div><span class="section-index">03 / NORTHERN TERRITORY</span><h2 id="places-title">얼어붙은 땅의 기록</h2><p>설원과 호수, 아이들이 다시 일으켜 세워야 할 생업의 터전.</p></div><span class="section-aside">TERRITORY / FACILITIES</span></div>
         <h3 class="subheading">북부의 네 지역 <span>04 REGIONS</span></h3>
         <div id="region-list" class="region-grid"></div>
         <h3 class="subheading facility-heading">영지의 시설과 장면 <span>09 RECORDS</span></h3>
         <div id="facility-list" class="facility-grid"></div>
+      </section>
+      <section class="section families" id="families" aria-labelledby="families-title">
+        <div class="section-heading"><div><span class="section-index">04 / BLOODLINES</span><h2 id="families-title">계승하는 가문들</h2><p>돌아오지 못한 부모들이 남긴 자리. 아이들은 각자의 이름으로 그 자리를 지킨다.</p></div><span class="section-aside">HOUSE RECORDS</span></div>
+        <div class="house-legend"><span><i class="legend-dot dot-royal"></i>변경백가</span><span><i class="legend-dot dot-knight"></i>다섯 기사 가문</span><span><i class="legend-dot dot-civilian"></i>평민 가문</span></div>
+        <div id="house-list" class="house-list"></div>
       </section>
       <section class="section giants" id="giants" aria-labelledby="giants-title">
         <div class="section-heading"><div><span class="section-index">05 / THE TWELVE</span><h2 id="giants-title">열두 불가살의 거인</h2><p>한 번 죽으면 50년 뒤에 돌아오는 거인들. 그리고 아직 끝나지 않은 마지막 결전.</p></div><span class="section-aside">THREAT RECORDS / 12</span></div>
